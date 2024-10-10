@@ -1,0 +1,10 @@
+[phases.setup]
+commands = [
+  "git config --global http.proxy socks5://0.0.0.0:1080",
+  "git config --global https.proxy socks5://0.0.0.0:1080"
+]
+
+[environment]
+HTTP_PROXY = "socks5://0.0.0.0:1080"
+HTTPS_PROXY = "socks5://0.0.0.0:1080"
+ALL_PROXY = "socks5://0.0.0.0:1080"
