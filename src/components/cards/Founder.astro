@@ -1,0 +1,23 @@
+---
+import Paragraph from '../shared/Paragraph.astro';
+
+export interface Props {
+  title: string,
+}
+const { title } = Astro.props
+---
+<div class="rounded-3xl border border-box-border bg-box-bg shadow-lg shadow-box-shadow relative overflow-hidden">
+  <div class="rounded-xl bg-gray-300 dark:bg-gray-950 p-3 text-heading-1 w-max relative">
+    <slot name="image" />
+  </div>
+  <h2 class="md:text-xl font-semibold text-heading-2 mt-6 mb-4"> {title} </h2>
+</div>
+
+<style is:global>
+  [name="image"] img {
+    max-height: 100%; /* Ensures the image doesn't overflow */
+    max-width: 100%; /* Keeps the image within the container */
+    height: auto; /* Maintains aspect ratio */
+    object-fit: contain; /* Prevents the image from stretching */
+  }
+</style>
